@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="signin"> 
+    <h2>Donate</h2> 
+    <form class="form" id="form" name="form" action = "" method = "POST">
+        {% csrf_token %}
+        <div class="inputBox"> 
+            <span>Amount</span> 
+            <input type="number" id="amount" name="amount" required> 
+        </div> 
+        <div class="inputBox"> 
+            <input type="submit" class="btn" value="Donate"> 
+        </div> 
+    </form>
+</div> 
+{% endblock content %}

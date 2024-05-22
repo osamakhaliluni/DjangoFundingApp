@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% csrf_token %}
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Field</th> 
+                <th>VAlue</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Title</td>
+                <td>{{project.title}}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{project.details}}</td>
+            </tr>
+            <tr>
+                <td>Target</td>
+                <td>{{project.target}}</td>
+            </tr>
+            <tr>
+                <td>start</td>
+                <td>{{project.start|date:"Y-m-d"}}</td>
+            </tr>
+            <tr>
+                <td>end</td>
+                <td>{{project.end|date:"Y-m-d"}}</td>
+            </tr>
+            <tr class="active-row">
+                <td>Donate</td>
+                <td><a href= {% url 'donateproject' project.title user %}><i class="fa-solid fa-hand-holding-dollar fa-lg"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

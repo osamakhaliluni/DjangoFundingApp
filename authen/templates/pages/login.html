@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="signin"> 
+        <h2>Sign In</h2> 
+        <form class="form" id="form" name="form" action = "" method = "POST">
+            {% csrf_token %}
+            {% if not exist %}
+            <p>Wrong Email or Password</p>
+            {% endif %}
+            <div class="inputBox"> 
+                <span>Email</span> 
+                <input type="text" id="email" name="email" required> 
+            </div> 
+            <div class="inputBox"> 
+                <span>Password</span> 
+                <input type="password" id="pass" name="pass" required> 
+            </div> 
+            <div class="inputBox"> 
+                <input class="btn" type="submit" value="Login"> 
+            </div> 
+            <div class="links">
+                    <a href={% url 'signup' %}>Signup</a> 
+            </div> 
+        </form>
+    </div> 
+{% endblock content %}

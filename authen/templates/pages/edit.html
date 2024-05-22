@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Field</th> 
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Title</td>
+                <td>
+                    <input type="text" name="title" id="title" value="{{project.title}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <input type="text" name="desc" id="desc" value="{{project.details}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Target</td>
+                <td>
+                    <input type="number" name="target" id="target" value="{{project.target}}">
+                </td>
+            </tr>
+            <tr>
+                <td>start</td>
+                <td>
+                    <input type="date" name="start" id="start" value="{{project.start|date:"Y-m-d"}}">
+                </td>
+            </tr>
+            <tr>
+                <td>end</td>
+                <td>
+                    <input type="date" name="end" id="end" value="{{project.end|date:"Y-m-d"}}">
+                </td>
+            </tr>
+            <tr class="active-row">
+                <td></td>
+                <td><input type="submit" value="edit"></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock %}

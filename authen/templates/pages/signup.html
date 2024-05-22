@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="signin"> 
+        <h2>Sign Up</h2> 
+        <form class="form" id="form" name="form" action = "" method = "POST">
+            {% csrf_token %}
+            <div class="inputBox"> 
+                <span>First Name</span>
+                <input type="text" id="fname" name="fname" required>  
+            </div> 
+            <div class="inputBox"> 
+                <span>Last Name</span> 
+                <input type="text" id="lname" name="lname" required> 
+            </div> 
+            <div class="inputBox"> 
+                <span>Email</span> 
+                <input type="email" id="email" name="email" required> 
+            </div> 
+            <div class="inputBox"> 
+                <span>Password</span>
+                <input type="password" id="pass" name="pass" required>  
+            </div> 
+            <div class="inputBox"> 
+                <span>Confirm Password</span> 
+                <input type="password" id="cpass" name="cpass" required> 
+            </div> 
+            <div class="inputBox"> 
+                <span>Mobile Number</span> 
+                <input type="text" id="num" name="num" required> 
+            </div> 
+            <div class="inputBox"> 
+                <span>User Type</span>
+            </div>
+            <div class="inputBox"> 
+                <span>Creator</span> 
+                <input type="radio" id="creator" name="utype" value="Creator" required> 
+            </div> 
+            <div class="inputBox"> 
+                <span>Donor</span> 
+                <input type="radio" id="donor" name="utype" value="Donor" required> 
+            </div> 
+            <div class="inputBox"> 
+                <input type="button" id="sub" class="btn" value="Sign Up" onclick="check()">
+            </div> 
+        </form> 
+    </div> 
+{% endblock content %}

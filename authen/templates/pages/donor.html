@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% csrf_token %}
+    <table>
+        <thead>
+            <tr>
+                <th>Project</th> 
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in project %}
+            <tr>
+                <td>{{i.title}}</td>
+                <td>
+                    <a href= {% url 'showproject' i.title user %}><i class="fa-solid fa-eye fa-lg"></i></a>
+                    <a href= {% url 'donateproject' i.title user %}><i class="fa-solid fa-hand-holding-dollar fa-lg"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

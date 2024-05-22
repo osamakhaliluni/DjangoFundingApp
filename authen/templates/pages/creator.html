@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+            {% csrf_token %}
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Project</th> 
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in project %}
+                    <tr>
+                        <td>{{i.title}}</td>
+                        <td>
+                            <a href= {% url 'editproject' i.title user %}><i class="fa-solid fa-pen-to-square fa-lg"></i></a>
+                            <a href= {% url 'deleteproject' i.title user %}><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr class="active-row">
+                        <td>add item</td>
+                        <td><a href= {% url 'createproject' user %}><i class="fa-solid fa-plus fa-lg"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+{% endblock %}
