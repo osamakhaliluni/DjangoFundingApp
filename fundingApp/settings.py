@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-9e03oda&hx+&57_*%qo2irn0l+ynhx^a)!qcubw^8fe2@*rfo9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['your-render-service-url.onrender.com']
+ALLOWED_HOSTS = ['djangofundingapp.onrender.com']
 
 
 # Application definition
